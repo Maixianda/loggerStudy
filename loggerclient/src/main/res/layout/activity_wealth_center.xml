@@ -20,5 +20,19 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_45"
             bind:header="@{header}" />
+        <com.bigkoo.convenientbanner.ConvenientBanner
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/convenientBanner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="10dp"
+            app:canLoop="true"/>
+        <com.bigkoo.convenientbanner.ConvenientBanner
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/convenientSecBanner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="10dp"
+            app:canLoop="true"/>
     </LinearLayout>
 </layout>
