@@ -12,7 +12,7 @@ import com.bigkoo.convenientbanner.holder.Holder;
  * 创建人:         maixianda
  * 创建时间:       2016/9/3 17:10
  */
-public class BannerHorizontalItemHolderView implements Holder<Integer> {
+public class BannerHorizontalItemHolderView implements Holder<BannerHorizontalItem> {
     private BannerHorizontalItem item;
     @Override
     public View createView(Context context) {
@@ -21,7 +21,7 @@ public class BannerHorizontalItemHolderView implements Holder<Integer> {
     }
 
     @Override
-    public void UpdateUI(Context context, int i, Integer integer) {
-        item.init();
+    public void UpdateUI(Context context, int i, BannerHorizontalItem bannerHorizontalItem) {
+        item.setObject(bannerHorizontalItem);
     }
 }
