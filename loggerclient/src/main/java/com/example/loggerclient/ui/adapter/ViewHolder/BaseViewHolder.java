@@ -14,8 +14,9 @@ import com.example.loggerclient.BR;
  */
 public class BaseViewHolder<B extends ViewDataBinding> extends RecyclerView.ViewHolder {
     private B mBinding;
-    public BaseViewHolder(View itemView) {
-        super(itemView);
+    public BaseViewHolder(B binding) {
+        super(binding.getRoot());
+        mBinding = binding;
     }
 
     public B getBinding()

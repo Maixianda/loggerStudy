@@ -35,7 +35,7 @@
             android:layout_marginBottom="10dp"
             app:canLoop="true"/>
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv"
+            android:id="@+id/rvPlatform"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
     </LinearLayout>

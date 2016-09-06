@@ -1,17 +1,21 @@
 package com.example.loggerclient.ui.activity;
 
 import android.databinding.DataBindingUtil;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
 
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.example.loggerclient.R;
 import com.example.loggerclient.databinding.ActivityWealthCenterBinding;
+import com.example.loggerclient.model.CooperationPlatform;
 import com.example.loggerclient.model.HeaderModel;
+import com.example.loggerclient.ui.adapter.CooperationPlatformAdapter;
 import com.example.loggerclient.ui.custom.BannerHorizontalItem;
 import com.example.loggerclient.ui.custom.BannerHorizontalItemHolderView;
 import com.example.loggerclient.ui.custom.LocalImageHolderView;
 import com.leo.swipe.back.base.BaseSwipeBackActivity;
-import com.orhanobut.logger.Logger;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -27,7 +31,7 @@ public class WealthCenterActivity extends BaseSwipeBackActivity implements Heade
     public HeaderModel header;
     private ArrayList<Integer> localImg = new ArrayList<>();
     private ArrayList<BannerHorizontalItem> llItem = new ArrayList<>();
-
+    private CooperationPlatformAdapter adapter;
     @Override
     public void beforeInitView() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_wealth_center);
@@ -36,7 +40,9 @@ public class WealthCenterActivity extends BaseSwipeBackActivity implements Heade
 
     @Override
     public void initView() {
-
+        binding.rvPlatform.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new CooperationPlatformAdapter(this);
+        binding.rvPlatform.setAdapter(adapter);
     }
 
     @Override
@@ -63,11 +69,18 @@ public class WealthCenterActivity extends BaseSwipeBackActivity implements Heade
             public BannerHorizontalItemHolderView createHolder() {
                 return new BannerHorizontalItemHolderView();
             }
-        }, llItem)
-                .setPageIndicator(new int[]{R.drawable.ic_white_dot, R.drawable.ic_red_dot}, getResources().getDimensionPixelSize(R.dimen.dp_7));
+        }, llItem);
+                //.setPageIndicator(new int[]{R.drawable.ic_white_dot, R.drawable.ic_red_dot}, getResources().getDimensionPixelSize(R.dimen.dp_7));
         //endregion 第二部分的banner
         //region recyclerView
-
+        adapter.add(new CooperationPlatform("1111","2222","333333"));
+        adapter.add(new CooperationPlatform("1111","2222","333333"));
+        adapter.add(new CooperationPlatform("1111","2222","333333"));
+        adapter.add(new CooperationPlatform("1111","2222","333333"));
+        adapter.add(new CooperationPlatform("1111","2222","333333"));
+        adapter.add(new CooperationPlatform("1111","2222","333333"));
+        adapter.add(new CooperationPlatform("1111","2222","333333"));
+        adapter.notifyDataSetChanged();
         //endregion recyclerView
     }
 
@@ -83,14 +96,12 @@ public class WealthCenterActivity extends BaseSwipeBackActivity implements Heade
     @Override
     protected void onResume() {
         binding.convenientBanner.startTurning(5000);
-        binding.convenientSecBanner.startTurning(5000);
         super.onResume();
     }
 
     @Override
     protected void onPause() {
         binding.convenientBanner.stopTurning();
-        binding.convenientSecBanner.stopTurning();
         super.onPause();
     }
 
@@ -104,7 +115,7 @@ public class WealthCenterActivity extends BaseSwipeBackActivity implements Heade
 
     private void setHeader() {
         header = new HeaderModel(this);
-        header.setMidTitle("按揭产品");
+        header.setMidTitle("财富中心");
         binding.setHeader(header);
     }
 
@@ -115,7 +126,7 @@ public class WealthCenterActivity extends BaseSwipeBackActivity implements Heade
             return idField.getInt(idField);
         } catch (Exception e) {
             e.printStackTrace();
-            Logger.e("banner获取资源,没有这个资源id");
+            //Logger.e("banner获取资源,没有这个资源id");
             return -1;
         }
 
