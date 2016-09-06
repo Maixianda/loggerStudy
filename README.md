@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Logger-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/1658) [![](https://img.shields.io/badge/AndroidWeekly-%23147-blue.svg)](http://androidweekly.net/issues/issue-147)
 [![Join the chat at https://gitter.im/orhanobut/logger](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/orhanobut/logger?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) <a href="http://www.methodscount.com/?lib=com.orhanobut%3Alogger%3A1.15"><img src="https://img.shields.io/badge/Methods and size-165 | 12 KB-e91e63.svg"/></a> [![Build Status](https://travis-ci.org/orhanobut/logger.svg?branch=master)](https://travis-ci.org/orhanobut/logger)
 
@@ -199,3 +200,6 @@ limitations under the License.
 </pre>
 
 # loggerStudy
+=======
+#yifengDemo
+>>>>>>> 237b9563619e7370e0a51ea3aa66416dde006689
