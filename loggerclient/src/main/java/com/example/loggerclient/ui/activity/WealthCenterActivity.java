@@ -2,9 +2,7 @@ package com.example.loggerclient.ui.activity;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
+import android.view.View;
 
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.example.loggerclient.R;
@@ -16,6 +14,7 @@ import com.example.loggerclient.ui.custom.BannerHorizontalItem;
 import com.example.loggerclient.ui.custom.BannerHorizontalItemHolderView;
 import com.example.loggerclient.ui.custom.LocalImageHolderView;
 import com.leo.swipe.back.base.BaseSwipeBackActivity;
+import com.orhanobut.logger.Logger;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -47,7 +46,13 @@ public class WealthCenterActivity extends BaseSwipeBackActivity implements Heade
 
     @Override
     public void initListener() {
-
+        binding.tvTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Logger.d("111");
+                Logger.d("222");
+            }
+        });
     }
 
     @Override

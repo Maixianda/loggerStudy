@@ -34,6 +34,11 @@
             android:layout_height="90dp"
             android:layout_marginBottom="10dp"
             app:canLoop="true"/>
+        <TextView
+            android:id="@+id/tv_test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="测试"/>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvPlatform"
             android:layout_width="match_parent"

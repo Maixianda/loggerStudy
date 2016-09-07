@@ -12,7 +12,7 @@ public final class Logger {
   public static final int VERBOSE = 2;
   public static final int WARN = 5;
 
-  private static final String DEFAULT_TAG = "PRETTYLOGGER";
+  private static final String DEFAULT_TAG = "MXD";
 
   private static Printer printer = new LoggerPrinter();
 
